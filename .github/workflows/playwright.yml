@@ -18,6 +18,8 @@ jobs:
     - name: Install Playwright
       run: npx playwright install --with-deps
     - name: Run Playwright tests
+      env:
+        PW_EXPERIMENTAL_TS_ESM: 1
       run: npx playwright test
     - uses: actions/upload-artifact@v2
       if: always()
